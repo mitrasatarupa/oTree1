@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+    <label class="col-form-label">
+        Pizza is the best food:
+    </label>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">0</span>
+        </div>
+
+        <input type="range" name="pizza" min="1" max="100" step="1">
+
+        <div class="input-group-append">
+            <span class="input-group-text">100</span>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">0</span>
+        </div>
+
+        <input type="range" name="pasta" min="1" max="100" step="1">
+
+        <div class="input-group-append">
+            <span class="input-group-text">100</span>
+        </div>
+    </div>
+
+    {% next_button %}
+{% endblock %}
+
+

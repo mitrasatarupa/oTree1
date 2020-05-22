@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block content %}
+
+<p>The correct answer is <b>40320</b>. </p>
+
+<p>Your answer is {{player.guess}}.</p>
+
+<p style="color:red">
+    {% if player.ascending %}
+    The average answer for all the participants who were shown the sequence in ascending oder is {{ group.avg_ascending }}
+</p>
+
+    {% else %}
+<p style="color:blue">
+    The average answer for participants who were shown the sequence in descending oder is {{ group.avg_descending}}
+    {% endif %}
+</p>
+{% formfields %}
+{% next_button %}
+
+{% endblock %}

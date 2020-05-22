@@ -1,0 +1,50 @@
+
+{% extends "global/BaseMotherhood.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h2 class="panel-sub-heading">
+        
+    </h2>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+    <p>
+      In this part of the experiment you will be presented with a series of randomly selected letters and numbers.
+    </p>
+    <p>
+      Once you have entered your summation, click the <b>Next</b> button or press the <b>Enter</b> key.<br><br> 
+    </p>
+    <p>
+        You will get <b>1 point for each correct answer</b>. 
+          Your score will not decrease if you provide an incorrect answer.
+    </p>
+
+        <p><br></p>
+
+    <p>
+           Please raise your hand and alert an experimenter if you have any questions.<br>
+    </p>
+
+	
+
+
+</div>
+
+      {% next_button %}<br><br><br>
+
+
+
+
+
+{% endblock %}

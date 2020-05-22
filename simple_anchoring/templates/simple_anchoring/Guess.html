@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Guess the Answer
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% if player.ascending %}
+            {{Constants.sequence_ascending}}
+        {% else %}
+            {{Constants.sequence_descending}}
+        {% endif %}
+
+    </p>
+    {% formfields %}
+    {% next_button %}
+
+{% endblock %}

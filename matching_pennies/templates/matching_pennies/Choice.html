@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+    <h4>Instructions</h4> <!-- h1 to h6 is used in html are used for header with h1 being the largest and h5 smallest -->
+    <p> <!-- p is used to for paragrahps -->
+        This is a matching pennies game.
+        Player 1 is the 'Mismatcher' and wins if the choices mismatch;
+        Player 2 is the 'Matcher' and wins if they match.
+
+    </p>
+
+    <p>
+        At the end, a random round will be chosen for payment.
+    </p> <!---->
+
+    <p> <!--This starts another paragraph which contains table-->
+
+    <h4>Round history</h4> <!--this is heading of the table-->
+    <table class="table"> <!--next lines are for creating a table-->
+        <tr> <!--tr starts the rows of a table-->
+            <th>Round</th> <!--th defines what are the heads of the table i.i. the collumn names : each of these adds one collumn i.e one cell in the row-->
+            <th>Player and outcome</th>
+        </tr>
+        {% for p in player_in_previous_rounds %} <!--before starting populating the rows in table, for loop is being used to retrieve data of each player in each round-->
+            <tr> <!--This is the second row-->
+                <td>{{ p.round_number }}</td> <!--this populates the collumn round number-->
+                <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td> <!--This populates player and outcome-->
+            </tr>
+        {% endfor %} <!--ending the for loop-->
+    </table> <!--ending the table-->
+
+    <p>
+        In this round, you are the {{ player.role }}.
+    </p>
+
+    {% formfield player.penny_side label="I choose:" %}
+
+    {% next_button %}
+
+{% endblock %}
+<!--Note: any operations like for il else are written between and do not forget to end them in appropriate place with proper allignment-->

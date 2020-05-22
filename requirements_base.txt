@@ -1,0 +1,2 @@
+otree>=2.5.0
+slider_task==0.1.1
